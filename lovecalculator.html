@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+            url('https://images.pexels.com/photos/912473/pexels-photo-912473.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        header{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
+        .heading{
+            letter-spacing: 3px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="card w-50 m-auto text-center">
+            <div class="card-header bg-danger text-white heading">Love Calculator</div><br>
+                <form class="form-inline w-75 m-auto">
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Your Name" id="name">
+                    </div>
+                        <div><span class="ml-3"> ❤️ </span></div>
+                    <div class="form-group">
+                        <input type="text" name="" class="form-control text-center" placeholder="Love Name" id="lname">
+                    </div>
+                </form >
+                <br>
+                <div class="w-75 m-auto">
+                    <button class="btn btn-success w-50" onclick="checkloveper()" >Get Result</button>
+                </div>
+                <br>
+                <div>
+                    <input type="text" name="" id="lovevalue" class="form-control text-center w-25 m-auto" placeholder="Love Percentage">
+                </div>
+
+              <div class="card-body"></div>
+              <div class="card-footer bg-secondary text-white">copyright © 2021 Rajbir Singh. All rights resereved</div>
+            
+          </div>
+    </header>
+
+    <script>
+        function checkloveper(){
+
+            var name = document.getElementById('name').value;
+            var lname = document.getElementById('lname').value;
+
+            if(name == ""){
+                alert('Enter your name first');
+            }
+            else if(name.length <=2){
+                alert('Minimum Length is 3');
+            }
+            else if(!isNaN(name)){
+                alert('Numbers are not ALLOWED');
+            }
+
+            else if(lname == ""){
+                alert('Enter your love name first');
+            }
+            else if(lname.length <=2){
+                alert('Minimum Length is 3');
+            }
+            else if(!isNaN(lname)){
+                alert('Numbers are not ALLOWED');
+            }
+
+            else{
+            var lovedata = Math.random() *101;
+            lovedata = Math.floor(lovedata);
+            document.getElementById('lovevalue').value = lovedata + "%";
+        }
+        }
+    </script>
+    
+</body>
+</html>
